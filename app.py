@@ -13,8 +13,8 @@ template_env = Environment(loader=template_loader)
 @app.route('/generar-pdf', methods=['POST'])
 def generar_pdf():
     # Imprime headers y cuerpo crudo para trazabilidad
-    print("[HEADERS]:", dict(request.headers))
-    print("[CUERPO RAW]:", request.get_data(as_text=True))
+    print("[HEADERS]:", dict(request.headers), flush=True)
+    print("[CUERPO RAW]:", request.get_data(as_text=True), flush=True)
 
     try:
         # Parseo forzado del cuerpo como JSON
